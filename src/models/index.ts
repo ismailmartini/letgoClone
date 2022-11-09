@@ -13,3 +13,11 @@ export declare class Product {
     readonly category?: number;
     readonly countInStock: number;
 }
+
+export declare class Category {
+
+    readonly id: string;
+    readonly name: string;
+    readonly src: any;
+
+}

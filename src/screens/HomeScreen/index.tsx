@@ -1,46 +1,28 @@
 import React, { useEffect, useState } from 'react'
-import { View, ScrollView, Text } from "react-native"
-import styles from './style'
-import { AntDesign } from '@expo/vector-icons';
+import { ScrollView } from "react-native"
 import productsAssets from '../../../assets/products'
-import FavoriteProductItem from '../../components/FavoriteProductItem'
+import FavoriteProducts from '../../components/FavoriteProducts'
 import { Product } from '../../models/index'
+import MainProducts from '../../components/MainProducts'
+import CategoryFilter from '../../components/CategoryFilter'
+import MessageNotification from '../../components/MessageNotification'
 function index() {
 
     const [products, setProducts] = useState<Product[]>([])
     useEffect(() => {
         setProducts(productsAssets)
-        console.log('data', products)
+
     }, [])
 
 
     return (
 
-        <View style={styles.productsContainer}>
-            {/* Render Header */}
-            <View style={styles.titleProducts}>
-                <Text style={styles.topicTitle}>
-                    Vitrin İlanları
-                </Text>
-                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <Text style={styles.detailTitle}>Hepsini Gör</Text>
-                    <AntDesign name="right" size={19} color="#F24E61" />
-                </View>
-
-            </View>
-
-            {/* Render Favorite products */}
-            <ScrollView
-                bounces={true}
-                horizontal={true}
-            >
-                {products.map((item) => {
-                    return <FavoriteProductItem key={item.id} product={item} />
-                })}
-
-
-            </ScrollView>
-        </View>
+        <ScrollView style={{ backgroundColor: 'white', height: '100%' }}>
+            <MessageNotification />
+            <CategoryFilter />
+            <FavoriteProducts />
+            <MainProducts mainProducts={products} />
+        </ScrollView>
     )
 }
 

@@ -3,29 +3,36 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
 
     productsContainer: {
-        width: '96%',
-        marginLeft: '4%',
-
+        width: '92%',
+        marginHorizontal: '4%',
 
     },
-
-
     titleProducts: {
-        justifyContent: 'space-between',
         flexDirection: 'row',
+        justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom: 12
-        //backgroundColor: 'red'
+        marginBottom: 10,
+        marginTop: 20
     },
+
     topicTitle: {
         fontWeight: 'bold',
-        fontSize: 16
+        fontSize: 16,
     },
     detailTitle: {
         fontWeight: 'bold',
         fontSize: 14,
         color: '#F24E61'
+    },
+    listContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+        flexWrap: 'wrap',
+        backgroundColor: 'white',
+        width: '100%'
     }
+
 
 
 
